@@ -5,6 +5,7 @@ import App from './App.vue'
 import Home from './page/home/index'
 import Certification from './page/certification/index'
 import ErrorPage from './page/error-page/index'
+import './quasar'
 Vue.use(VueRouter)
 // 注册组件库
 Vue.use(vueCanvasPoster)
