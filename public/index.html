@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>logo.ico">
-    <title>vue-xinyu</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but vue-xinyu doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>心予公益协会</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.4.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.4.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <style media="screen">
+        body {
+            background: #ECEFF1;
+            color: rgba(0, 0, 0, 0.87);
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        @media (max-width: 600px) {
+            body, #message {
+                margin-top: 0;
+                background: white;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div id="app"></div>
+</body>
 </html>
