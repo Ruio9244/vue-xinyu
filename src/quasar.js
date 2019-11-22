@@ -22,6 +22,14 @@ import {
     QItem,
     QItemSection,
     QItemLabel,
+    QForm,
+    QInput,
+    QAvatar,
+    QTable,
+    QTr,
+    QTd,
+    QSpace,
+    Loading,
 } from 'quasar'
 
 Vue.use(Quasar, {
@@ -41,6 +49,14 @@ Vue.use(Quasar, {
         QItem,
         QItemSection,
         QItemLabel,
+        QForm,
+        QInput,
+        QAvatar,
+        QTable,
+        QTr,
+        QTd,
+        QSpace,
+        Loading,
     },
     directives: {},
     plugins: {}

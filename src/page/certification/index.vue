@@ -115,6 +115,9 @@
                 }
             };
         },
+        beforeCreate() {
+            console.log(this.$route.params);
+        },
         methods: {
             // 保存
             success(src) {
