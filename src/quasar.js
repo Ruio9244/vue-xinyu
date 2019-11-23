@@ -30,6 +30,7 @@ import {
     QTd,
     QSpace,
     Loading,
+    Notify,
 } from 'quasar'
 
 Vue.use(Quasar, {
@@ -59,5 +60,7 @@ Vue.use(Quasar, {
         Loading,
     },
     directives: {},
-    plugins: {}
+    plugins: {
+        Notify
+    }
 })

@@ -5,7 +5,7 @@
             <q-toolbar>
                 <q-toolbar-title>
                     <q-avatar>
-                        <img class="logo" src="../src/assets/logo.png">
+                        <img class="logo" src="../src/assets/logo.png" @click="backHome()">
                     </q-avatar>
                     心予公益协会
                 </q-toolbar-title>
@@ -35,6 +35,13 @@
 
         data() {
             return {}
+        },
+        methods: {
+            backHome() {
+                this.$router.push({
+                    name: 'Home'
+                });
+            }
         }
     }
 </script>

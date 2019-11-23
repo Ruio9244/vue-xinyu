@@ -21,6 +21,9 @@
                         <q-td key="money" :props="props">
                             <div class="text-pre-wrap">{{ props.row.money }}</div>
                         </q-td>
+                        <q-td>
+                            <div class="text-pre-wrap">{{ props.row.date }}</div>
+                        </q-td>
                     </q-tr>
                 </template>
             </q-table>
@@ -57,57 +60,74 @@
                         field: 'money',
                         sortable: true
                     },
+                    {
+                        name: 'date',
+                        align: 'left',
+                        label: '捐赠时间',
+                        field: 'date',
+                        sortable: true
+                    },
                 ],
                 data: [
                     {
                         id: 'XY0000001',
-                        name: 'Frozen Yogurt',
-                        money: 159
+                        name: '',
+                        money: 159,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
                         name: 'Ice cream sandwich',
-                        money: 237
+                        money: 237,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
-                        name: 'Eclair',
-                        money: 262
+                        name: '张三',
+                        money: 262,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
-                        name: 'Cupcake',
-                        money: 305
+                        name: '李四四',
+                        money: 305,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
-                        name: 'Gingerbread',
-                        money: 356
+                        name: '王五五',
+                        money: 356,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
                         name: 'Jelly bean',
-                        money: 375
+                        money: 375,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
                         name: 'Lollipop',
-                        money: 392
+                        money: 392,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
                         name: 'Honeycomb',
-                        money: 408
+                        money: 408,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
                         name: 'Donut',
-                        money: 452
+                        money: 452,
+                        date: '2019-11-22'
                     },
                     {
                         id: 'XY0000001',
                         name: 'KitKat',
-                        money: 518
+                        money: 518,
+                        date: '2019-11-22'
                     }
                 ]
             }
@@ -115,7 +135,31 @@
         methods:
             {
                 viewCertification: function (row) {
-                    this.$router.push({path: '/certification', params: {row}});
+                    let errMsg = '';
+                    if (row.id === null || row.id === '') {
+                        errMsg += '证书标号不可以为空！\n';
+                    }
+                    if (row.name === null || row.name === '') {
+                        errMsg += '捐赠主体不可以为空！\n';
+                    }
+                    if (row.money === null || row.money === '') {
+                        errMsg += '捐赠金额不可以为空！\n';
+                    }
+                    if (row.date === null || row.date === '') {
+                        errMsg += '捐赠日期不可以为空！\n';
+                    }
+                    if (errMsg !== '') {
+                        this.$q.notify({
+                            message: errMsg,
+                            color: 'red',
+                            position: 'center'
+                        });
+                    } else {
+                        this.$router.push({
+                            name: 'Certification',
+                            params: {id: row.id, name: row.name, money: row.money, date: row.date}
+                        });
+                    }
                 }
             }
     }
