@@ -22,7 +22,7 @@
                             left: 15,
                             top: 15,
                             width: 800,
-                            height: 1161
+                            height: 1171
                         },
                         // 证书内容2
                         {
@@ -146,6 +146,5 @@
         max-height: 1131px;
         width: 100%;
         height: 100%;
-        margin: 20px;
     }
 </style>

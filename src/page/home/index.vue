@@ -5,9 +5,21 @@
                     title="捐赠信息列表"
                     :data="donationDetail"
                     :columns="columns"
+                    :filter="filter"
+                    :pagination.sync="paginationControl"
                     row-key="id"
                     binary-state-sort
             >
+                <template v-slot:top>
+                    <q-input rounded outlined label="请输入关键词" maxlength="12" dense debounce="300" color="primary"
+                             v-model="filter">
+                        <template v-slot:append>
+                            <q-avatar>
+                                <img src="../../../src/assets/logo.jpg">
+                            </q-avatar>
+                        </template>
+                    </q-input>
+                </template>
                 <template v-slot:body="props">
                     <q-tr :props="props">
                         <q-td key="id" :props="props">
@@ -39,6 +51,9 @@
         name: "home",
         data() {
             return {
+                filter: '',
+                paginationControl: { rowsPerPage: 10, page: 1 },
+
                 columns: [
                     {
                         name: 'id',
@@ -91,7 +106,7 @@
                             id: x['证书编号'],
                             name: x['捐款人'],
                             money: x['捐款金额'],
-                            date: this.formatDate(x['捐款日期'],'-')
+                            date: this.formatDate(x['捐款日期'], '-')
                         };
                         this.donationDetail.push(item);
                     });

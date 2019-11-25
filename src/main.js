@@ -9,7 +9,6 @@ import './quasar'
 import App from './App.vue'
 import Home from './page/home/index'
 import Certification from './page/certification/index'
-import CertificationList from './page/certification-list/index'
 import ErrorPage from './page/error-page/index'
 
 
@@ -24,7 +23,6 @@ const router = new VueRouter({
     routes: [
         {path: "/home", name: 'Home', component: Home},
         {path: "/certification", name: 'Certification', component: Certification},
-        {path: "/certification-list", name: 'CertificationList', component: CertificationList},
         {path: "/", redirect: "home"},
         {path: "*", component: ErrorPage}]
 });
