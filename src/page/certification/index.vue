@@ -13,7 +13,7 @@
                 src: "",
                 painting: {
                     width: 830,
-                    height: 1161,
+                    height: 1200,
                     views: [
                         // 本地图片
                         {
@@ -22,7 +22,7 @@
                             left: 15,
                             top: 15,
                             width: 800,
-                            height: 1171
+                            height: 1161
                         },
                         // 证书内容2
                         {
